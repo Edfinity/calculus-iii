@@ -1,0 +1,86 @@
+##DESCRIPTION
+#  Created: 3/01/02
+#  Author: Minock
+#  Stewart 4th ed., section 10.1
+#  Match parametric equations for unit circle with description
+##ENDDESCRIPTION
+
+##KEYWORDS('parametric')
+## tcao tagged and PAID on 12-12-2003
+
+## DBsubject('Calculus')
+## DBchapter('Parametric Equations and Polar Coordinates')
+## DBsection('Curves Defined by Parametric Equations')
+## Date('6/3/2002')
+## Author('')
+## Institution('')
+## TitleText1('Calculus: Early Transcendentals')
+## EditionText1('6')
+## AuthorText1('Stewart')
+## Section1('10.1')
+## Problem1('19 17')
+DOCUMENT();
+
+loadMacros(
+  "PGstandard.pl",
+  "PGchoicemacros.pl",
+  "MathObjects.pl",
+   "contextABCD.pl",
+);
+
+TEXT(beginproblem());
+$showPartialCorrectAnswers = 0;
+
+Context("ABCD");
+Context()->strings->add(E=>{}, F=>{});
+
+qa(~~@questions, ~~@answers,
+
+" \( f(t) = (\sin(t),\cos(t)) \)",   "A",
+" \( f(t) = (-\sin(t),-\cos(t)) \)",   "B",
+" \( f(t) = (\cos(t),-\sin(t)) \)",   "C",
+" \( f(t) = (-\cos(t),-\sin(t)) \)",   "D",
+" \( f(t) = (\cos(2t),\sin(2t)) \)",   "E",
+" \( f(t) = (\cos{\frac{t}{2}}, \sin{\frac{t}{2}}) \)",   "F"
+    );
+ 
+
+# Now randomize the questions:
+@slice = NchooseK(6,5);
+@shuffle = shuffle(scalar(@slice));
+($ans1, $ans2, $ans3, $ans4, $ans5) = map {String($_)} @answers[@slice] ;
+
+BEGIN_TEXT
+Assume time \(t\) runs from zero to \( 2\pi \) and that the unit circle
+has been labeled as a clock.
+$BR$BR
+Match each of the parametric equations with the
+best description of the curve from the following list.  Enter
+the appropriate letter (A, B, C, D, E, F ) in each blank.
+$BR
+$BR
+A. Starts at 12 o'clock and moves clockwise one time around.
+$BR
+B. Starts at 6 o'clock and moves clockwise one time around.
+$BR
+C. Starts at 3 o'clock and moves clockwise one time around.
+$BR
+D. Starts at 9 o'clock and  moves counterclockwise one time around.
+$BR
+E. Starts at 3 o'clock and  moves counterclockwise two times around.
+$BR
+F. Starts at 3 o'clock and moves counterclockwise to 9 o'clock.
+$BR
+END_TEXT
+
+TEXT(EV2(match_questions_list_varbox(5,@questions[@slice])));
+
+ANS(
+  $ans1->cmp,
+  $ans2->cmp,
+  $ans3->cmp,
+  $ans4->cmp,
+  $ans5->cmp,
+);
+
+ENDDOCUMENT();

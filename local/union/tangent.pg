@@ -1,0 +1,58 @@
+DOCUMENT();        # This should be the first executable line in the problem.
+
+loadMacros(
+  "PGstandard.pl",
+  "MathObjects.pl",
+  "parserMultiAnswer.pl",
+  "parserParametricLine.pl",
+  "unionUtils.pl",
+  "PGcourse.pl",
+);
+
+
+TEXT(beginproblem);
+
+##############################################
+#  Setup
+
+Context("Vector");
+Context()->variables->add(t => 'Real');
+
+$a = non_zero_random(-5,5,1);
+$a = 2;
+$b = random(2,6,1);
+
+$f = Formula("(t^3 - (3*$b*$b)t,$a t^2)")->reduce;
+
+$p1 = $f->eval(t=>$b);
+$p2 = $f->eval(t=>-$b);
+
+##############################################
+
+Context()->texStrings;
+BEGIN_TEXT
+
+Consider the parametric curve in the plane given by
+\[f(t) = $f.\]
+
+The curve has vertical tangent lines at the point(s):$PAR
+${BCENTER}
+\((x,y)\) = \{ans_rule(30)\}
+${ECENTER}
+$PAR
+
+${BITALIC}(If more than one point, separate them by commas.)${EITALIC}
+
+END_TEXT
+Context()->normalStrings;
+
+##################################################
+#  Answers
+
+ANS(List($p1,$p2)->cmp);
+
+$showPartialCorrectAnswers = 1;
+
+##################################################
+
+ENDDOCUMENT();        # This should be the last executable line in the problem.

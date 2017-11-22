@@ -1,0 +1,98 @@
+DOCUMENT();        # This should be the first executable line in the problem.
+
+loadMacros(
+  "PGstandard.pl",
+  "MathObjects.pl",
+  "parserMultiAnswer.pl",
+  "parserParametricLine.pl",
+  "PGcourse.pl",
+);
+
+
+TEXT(beginproblem);
+
+##############################################
+#  Setup
+
+#
+#  Check a pair of answers in either order, allowing blanks
+#
+$EitherOrder = sub {
+  my ($correct,$student) = @_;
+  my ($C1,$C2) = @$correct; my ($S1,$S2) = @$student; my ($A1,$A2) = (0,0);
+  if ($S1 eq "") {
+    $A2 = ($C1 == $S2 || $C2 == $S2) if $S2 ne "";
+  } elsif ($S2 eq "") {
+    $A1 = ($C1 == $S1 || $C2 == $S1);
+  } else {
+    if ($C1 == $S1) {
+      ($A1,$A2) = (1,$C2 == $S2);
+    } else {
+      ($A1,$A2) = ($C1 == $S2,$C2 == $S1);
+    }
+  }
+  return ($A1,$A2);  
+};
+
+
+Context("Vector");
+Context()->variables->add(t => 'Real');
+
+$a = non_zero_random(-5,5,1);
+$b = random(2,6,1);
+
+$f = Formula("($a t^2, t^3 - ($b*$b)t)")->reduce;
+
+$mp = MultiAnswer(Real($b),Real(-$b))->with(
+  allowBlankAnswers => 1,
+  checker => $EitherOrder
+);
+
+$p = $f->eval(t=>$b);
+
+$df = $f->D('t');
+$v1 = Vector($df->eval(t=>$b));
+$v2 = Vector($df->eval(t=>-$b));
+
+$L = MultiAnswer(ParametricLine($p,$v1),ParametricLine($p,$v2))->with(
+  allowBlankAnswers => 1,
+  checker => $EitherOrder
+);
+
+
+##############################################
+
+Context()->texStrings;
+BEGIN_TEXT
+
+Consider the parametric curve in the plane given by
+\[f(t) = $f.\]
+
+The curve crosses itself at the point \((x,y)\) = \{ans_rule(15)\}
+when \(t\) = \{$mp->ans_rule(10)\} and \{$mp->ans_rule(10)\}.
+$PAR
+
+There are two tangent lines at this point (one along each portion of
+the curve that crosses at there).
+The parametric forms for these tangent lines are$PAR
+
+\(L_1(t)\) = \{$L->ans_rule(40)\} and$BR
+\(L_2(t)\) = \{$L->ans_rule(40)\}.
+
+END_TEXT
+Context()->normalStrings;
+
+##################################################
+#  Answers
+
+ANS(
+  $p->cmp,
+  $mp->cmp,
+  $L->cmp,
+);
+
+$showPartialCorrectAnswers = 1;
+
+##################################################
+
+ENDDOCUMENT();        # This should be the last executable line in the problem.

@@ -1,0 +1,17 @@
+
+openDate          = 11/14/2012 at 09:00am EST
+dueDate           = 11/18/2012 at 08:00pm EST
+answerDate        = 11/18/2012 at 08:30pm EST
+paperHeaderFile   = 
+screenHeaderFile  = headers/Week11-optional.pg
+problemList       = 
+Library/Rochester/setLinearAlgebra1Systems/ur_la_1_23.pg, 1, -1 
+Library/maCalcDB/setLinearAlgebra1Systems/ur_la_1_7.pg, 1, -1 
+Library/TCNJ/TCNJ_RowReduction/problem4.pg, 1, -1 
+Library/TCNJ/TCNJ_RowReduction/problem5.pg, 1, -1 
+Library/TCNJ/TCNJ_RowReduction/problem9.pg, 1, -1 
+Library/TCNJ/TCNJ_LinearSystems/problem14.pg, 1, -1 
+Library/TCNJ/TCNJ_LinearSystems/problem15.pg, 1, -1 
+Library/TCNJ/TCNJ_LinearSystems/problem19.pg, 1, -1 
+Library/TCNJ/TCNJ_LinearSystems/problem3.pg, 1, -1 
+

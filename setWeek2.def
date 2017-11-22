@@ -1,0 +1,20 @@
+
+openDate          = 09/14/2012 at 10:30am EDT
+dueDate           = 09/19/2012 at 07:00am EDT
+answerDate        = 09/20/2012 at 07:00am EDT
+paperHeaderFile   = 
+screenHeaderFile  = headers/Week2.pg
+problemList       = 
+union/setMVfunctions/sets-1.pg, 1, -1 
+union/setMVfunctions/sets-2.pg, 1, -1 
+union/setMVtraces/trace-1b.pg, 1, -1 
+union/setMVtraces/trace-1a.pg, 1, -1 
+union/setMVtraces/trace-2a.pg, 1, -1 
+union/setMVtraces/trace-2b.pg, 1, -1 
+union/setMVtraces/trace-3a.pg, 1, -1 
+union/setMVtraces/trace-3b.pg, 1, -1 
+union/setMVtraces/trace-5a.pg, 1, -1 
+union/setMVtraces/trace-5b.pg, 1, -1 
+union/setMVtraces/trace-4a.pg, 1, -1 
+local/union/setMVtraces/trace-4b.pg, 1, -1 
+

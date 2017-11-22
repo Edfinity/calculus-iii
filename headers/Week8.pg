@@ -1,0 +1,41 @@
+DOCUMENT();
+
+loadMacros("courseHeaders.pl");
+
+##############################################################
+##
+##  Use the 'Save As' button to save a copy of this file in
+##  your course directory.  Use the name 
+##
+##       headers/name.pg
+##
+##  where 'name' is the name you want to use.  Then edit the
+##  items below to correspond to your homework set.
+##
+##  You can erase these lines before saving the file.
+##
+##############################################################
+
+$message="The book problems are not to be turned in. The problem numbers are for the tenth edition, with the numbers for the ninth edition in parentheses when they differ.";
+
+
+courseHeader(
+
+  topic     => "directional derivatives, gradient vectors, and critical points",
+
+  bookinfo  => "Section 13.6, 13.7, and 13.8",
+
+  bookprobs => ["Section 13.6 $NUMBER 31, 32, 72 (66), 73 (67)",
+                           "Section 13.7 $NUMBER 13 (11), 14 (12), 16 (14)",
+                           "Section 13.8 $NUMBER 5-8"],
+
+  moreprobs => undef,  # set to a list like bookprobs above
+                       # if you want a listing for more problems
+
+  text      => $message,
+
+  showhint  => 0,  # set to 1 if you want a WeBWorK hint
+                   # at the bottom of the info panel
+);
+
+ENDDOCUMENT();

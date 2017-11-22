@@ -1,0 +1,16 @@
+
+openDate          = 11/07/2012 at 10:30am EST
+dueDate           = 11/12/2012 at 07:00pm EST
+answerDate        = 11/13/2012 at 07:00pm EST
+paperHeaderFile   = 
+screenHeaderFile  = headers/Week10.pg
+problemList       = 
+union/setMVderivatives/an13_2_7b.pg, 1, -1 
+union/setMVderivatives/velocity-1.pg, 1, -1 
+union/setMVderivatives/velocity-2.pg, 1, -1 
+union/setMVderivatives/an13_2_13.pg, 1, -1 
+local/maCalcDB/setParametric1Curves/ur_pa_1_1.pg, 1, -1 
+local/Michigan/Chap17Sec2/Q10.pg, 1, -1 
+local/union/tangent.pg, 1, -1 
+local/union/crossing.pg, 1, -1 
+

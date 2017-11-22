@@ -1,0 +1,42 @@
+DOCUMENT();
+loadMacros(
+  "PGstandard.pl",
+  "MathObjects.pl",
+);
+ 
+TEXT(beginproblem());
+
+Context("Point")->variables->add(t=>'Real');
+
+#############################
+#  Setup
+#
+$a = random(1,20);
+$b = random(7,20);
+
+$f = Formula("(ln($a t),1/sqrt($b-t))");
+
+Context("Interval");
+
+$D = Compute("(0,$b)");
+
+#############################
+#  State problem
+#
+
+Context()->texStrings;
+BEGIN_TEXT
+Find the natural domain for \(f\colon {\bf R} \to {\bf R}^2\) by
+\[f(t) = $f.\]
+$BR$BR
+The domain (using \{helpLink('interval notation')\}) is: \{ans_rule(50)\}
+END_TEXT
+Context()->normalStrings;
+
+ANS($D->cmp);
+
+ENDDOCUMENT();
+
+
+
+
