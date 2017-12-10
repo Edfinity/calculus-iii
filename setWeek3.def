@@ -5,14 +5,14 @@ answerDate        = 09/27/2012 at 07:00am EDT
 paperHeaderFile   = 
 screenHeaderFile  = headers/Week3.pg
 problemList       = 
-union/setMVlevelsets/levels-1/levels-1.pg, 1, -1 
-union/setMVlevelsets/levels-2/levels-2.pg, 1, -1 
-union/setMVlevelsets/levels-3/levels-3.pg, 1, -1 
-union/setMVlevelsets/levels-4/levels-4.pg, 1, -1 
-union/setMVlevelsets/levels-5/levels-5a.pg, 1, -1 
-union/setMVlevelsets/levels-5/levels-5b.pg, 1, -1 
-union/setMVlevelsets/levels-5/levels-5c.pg, 1, -1 
-union/setMVlevelsets/levels-6/levels-6.pg, 1, -1 
-union/setMVlevelsets/levels-7/levels-7a.pg, 1, -1 
-union/setMVlevelsets/levels-7/levels-7b.pg, 1, -1 
+Library/Union/setMVlevelsets/levels-1/levels-1.pg, 1, -1 
+Library/Union/setMVlevelsets/levels-2/levels-2.pg, 1, -1 
+Library/Union/setMVlevelsets/levels-3/levels-3.pg, 1, -1 
+Library/Union/setMVlevelsets/levels-4/levels-4.pg, 1, -1 
+Library/Union/setMVlevelsets/levels-5/levels-5a.pg, 1, -1 
+Library/Union/setMVlevelsets/levels-5/levels-5b.pg, 1, -1 
+Library/Union/setMVlevelsets/levels-5/levels-5c.pg, 1, -1 
+Library/Union/setMVlevelsets/levels-6/levels-6.pg, 1, -1 
+Library/Union/setMVlevelsets/levels-7/levels-7a.pg, 1, -1 
+Library/Union/setMVlevelsets/levels-7/levels-7b.pg, 1, -1 
 
